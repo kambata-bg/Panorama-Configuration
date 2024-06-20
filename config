@@ -1,0 +1,1233 @@
+
+set device-group prg-lab-palovm03 application 
+set device-group prg-lab-palovm03 application-group 
+set device-group prg-lab-palovm03 service 
+set device-group prg-lab-palovm03 service-group 
+set device-group prg-lab-palovm03 schedule 
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic target negate no
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic to any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic from any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic source any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic destination any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic source-user any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic category any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic application quic
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic service application-default
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic source-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic action deny
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic log-setting default
+set device-group prg-lab-palovm03 pre-rulebase security rules Block-Quic disabled no
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group description "Rule for Global Protect remote users access to internal applications and Internet, based on user-group and IP pool."
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group target negate no
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group to [ Trust-L3 Untrust-L3 ]
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group from GP-L3
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group source GP-POOL-10.10.10.0_m24
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group destination any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group source-user cn=all,ou=groups,ou=vpn,dc=ecslab,dc=local
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group category any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group application any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group service application-default
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group source-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group action allow
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group log-setting default
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group profile-setting profiles url-filtering Advanced-URL-Filtering
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-User-Group profile-setting profiles file-blocking best-practice
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group target negate no
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group from Trust-L3
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group source Internal-NET-10.42.173.0_m24
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group destination any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group source-user cn=all,ou=groups,ou=vpn,dc=ecslab,dc=local
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group category any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group application any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group service application-default
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group source-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group action allow
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group log-setting default
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group profile-setting profiles url-filtering Advanced-URL-Filtering
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-User-Group profile-setting profiles file-blocking best-practice
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP target negate no
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP to [ Trust-L3 Untrust-L3 ]
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP from GP-L3
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP source GP-POOL-10.10.10.0_m24
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP destination any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP source-user any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP category any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP application any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP service application-default
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP source-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP action allow
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP log-setting default
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP profile-setting profiles url-filtering Advanced-URL-Filtering
+set device-group prg-lab-palovm03 pre-rulebase security rules GP-Access-IP profile-setting profiles file-blocking best-practice
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP target negate no
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP from Trust-L3
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP source Internal-NET-10.42.173.0_m24
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP destination any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP source-user any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP category any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP application any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP service application-default
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP source-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP action allow
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP log-setting default
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP profile-setting profiles url-filtering Advanced-URL-Filtering
+set device-group prg-lab-palovm03 pre-rulebase security rules Trust-Access-IP profile-setting profiles file-blocking best-practice
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY target negate no
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY to any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY from any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY source-user any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY application [ icmp ping traceroute ]
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY service application-default
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY action allow
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY log-setting default
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY category any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY source any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY destination any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY log-start yes
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY source-hip any
+set device-group prg-lab-palovm03 pre-rulebase security rules Allow_ICMP-ANY destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase nat rules No_NAT_DC target negate no
+set device-group prg-lab-palovm03 pre-rulebase nat rules No_NAT_DC to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules No_NAT_DC from Trust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules No_NAT_DC source any
+set device-group prg-lab-palovm03 pre-rulebase nat rules No_NAT_DC destination [ 10.42.171.100 10.42.171.137 ECSDC01.ecslab.local ECSDC02.ecslab.local ]
+set device-group prg-lab-palovm03 pre-rulebase nat rules No_NAT_DC service any
+set device-group prg-lab-palovm03 pre-rulebase nat rules No-NAT-Untrust target negate no
+set device-group prg-lab-palovm03 pre-rulebase nat rules No-NAT-Untrust to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules No-NAT-Untrust from Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules No-NAT-Untrust source 10.42.171.111
+set device-group prg-lab-palovm03 pre-rulebase nat rules No-NAT-Untrust destination 10.42.171.137
+set device-group prg-lab-palovm03 pre-rulebase nat rules No-NAT-Untrust service any
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT source-translation dynamic-ip-and-port interface-address interface ethernet1/1
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT source-translation dynamic-ip-and-port interface-address ip 10.42.171.137/24
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT target negate no
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT from [ GP-L3 Trust-L3 ]
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT source any
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT destination any
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT service any
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust source-translation dynamic-ip-and-port interface-address interface ethernet1/1
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust source-translation dynamic-ip-and-port interface-address ip 10.42.171.137/24
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust target negate no
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust from Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust source 10.42.171.111
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust destination any
+set device-group prg-lab-palovm03 pre-rulebase nat rules Hide_NAT-Untrust service any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion type ssl-forward-proxy 
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion target negate no
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion category [ financial-services government health-and-medicine ]
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion service application-default
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion from [ GP-L3 Trust-L3 ]
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion source any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion destination any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion source-user any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion source-hip any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion action no-decrypt
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion log-setting default
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion profile Best-Practice
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion disabled no
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption-exclusion log-success yes
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption type ssl-forward-proxy 
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption target negate no
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption category any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption service any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption from [ GP-L3 Trust-L3 ]
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption to Untrust-L3
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption source any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption destination any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption source-user any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption source-hip any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption destination-hip any
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption action decrypt
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption log-setting default
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption profile Best-Practice
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption disabled no
+set device-group prg-lab-palovm03 pre-rulebase decryption rules Outbound-decryption log-success yes
+set device-group prg-lab-palovm03 post-rulebase default-security-rules rules interzone-default action deny
+set device-group prg-lab-palovm03 post-rulebase default-security-rules rules interzone-default log-start no
+set device-group prg-lab-palovm03 post-rulebase default-security-rules rules interzone-default log-end yes
+set device-group prg-lab-palovm03 post-rulebase default-security-rules rules intrazone-default action allow
+set device-group prg-lab-palovm03 post-rulebase default-security-rules rules intrazone-default log-start no
+set device-group prg-lab-palovm03 post-rulebase default-security-rules rules intrazone-default log-end yes
+set device-group prg-lab-palovm03 devices 015351000097742 
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering description "Advanced URL filtering"
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering credential-enforcement mode ip-user 
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering credential-enforcement log-severity informational
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering credential-enforcement block [ abused-drugs adult command-and-control copyright-infringement cryptocurrency dynamic-dns extremism gambling grayware hacking high-risk malware nudity parked peer-to-peer phishing proxy-avoidance-and-anonymizers questionable real-time-detection unknown weapons ]
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering credential-enforcement continue [ MY-LIST online-storage-and-backup ]
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering local-inline-cat yes
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering cloud-inline-cat yes
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering safe-search-enforcement no
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering log-http-hdr-xff yes
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering log-http-hdr-user-agent yes
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering log-http-hdr-referer yes
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering alert [ abortion alcohol-and-tobacco auctions business-and-economy computer-and-internet-info content-delivery-networks dating educational-institutions entertainment-and-arts financial-services games government health-and-medicine home-and-garden hunting-and-fishing insufficient-content internet-communications-and-telephony internet-portals job-search legal low-risk medium-risk military motor-vehicles music newly-registered-domain news not-resolved personal-sites-and-blogs philosophy-and-political-advocacy private-ip-addresses real-estate recreation-and-hobbies reference-and-research religion search-engines sex-education shareware-and-freeware shopping social-networking society sports stock-advice-and-tools streaming-media swimsuits-and-intimate-apparel training-and-tools translation travel weapons web-advertisements web-based-email web-hosting ]
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering block [ abused-drugs adult command-and-control copyright-infringement cryptocurrency dynamic-dns extremism gambling grayware hacking high-risk malware nudity parked peer-to-peer phishing proxy-avoidance-and-anonymizers questionable real-time-detection unknown ]
+set device-group prg-lab-palovm03 profiles url-filtering Advanced-URL-Filtering continue [ MY-LIST online-storage-and-backup ]
+set device-group prg-lab-palovm03 profiles decryption 
+
+set template prg-lab-palovm03 settings default-vsys vsys1
+set template prg-lab-palovm03 config  vsys vsys1 zone Untrust-L3 network layer3 ethernet1/1
+set template prg-lab-palovm03 config  vsys vsys1 zone Trust-L3 network layer3 [ ethernet1/2 tunnel.50 ]
+set template prg-lab-palovm03 config  vsys vsys1 zone Trust-L3 enable-user-identification yes
+set template prg-lab-palovm03 config  vsys vsys1 zone S2S-VPN network layer3 tunnel.10
+set template prg-lab-palovm03 config  vsys vsys1 zone S2S-VPN network log-setting default
+set template prg-lab-palovm03 config  vsys vsys1 zone GP-L3 network layer3 tunnel.100
+set template prg-lab-palovm03 config  vsys vsys1 zone GP-L3 network log-setting default
+set template prg-lab-palovm03 config  vsys vsys1 zone GP-L3 enable-user-identification yes
+set template prg-lab-palovm03 config  vsys vsys1 import network interface [ ethernet1/1 ethernet1/2 vlan loopback tunnel sdwan tunnel.10 tunnel.100 tunnel.50 ]
+set template prg-lab-palovm03 config  vsys vsys1 import network vlan 
+set template prg-lab-palovm03 config  vsys vsys1 import network virtual-router default
+set template prg-lab-palovm03 config  vsys vsys1 import network logical-router 
+set template prg-lab-palovm03 config  vsys vsys1 import network virtual-wire 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config local-address ip ipv6 2345:0425:2CA1:0000:0000:0567:5673:23b5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config local-address ip ipv4 10.42.171.137/24
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config local-address interface ethernet1/1
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config local-address ip-address-family ipv4
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP user-credential-or-client-cert-required no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP os Any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP authentication-profile AD-AUTH-LDAP
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP authentication-message "PORTAL AD LDAP"
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP auto-retrieve-passcode no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP username-label Username
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth AD-LDAP password-label Password
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML user-credential-or-client-cert-required no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML os Any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML authentication-profile SDWAN-LAB-SAML
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML authentication-message "SAML PORTAL"
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML auto-retrieve-passcode no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML username-label Username
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config client-auth SAML password-label Password
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config log-setting default
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config custom-login-page factory-default
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config custom-home-page factory-default
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local portal-config ssl-tls-service-profile Asteriks-esclab-prof
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent hip-collection max-wait-time 20
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent hip-collection collect-hip-data yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gateways internal list gateway1-internal.ecslab.local fqdn gateway1-internal.ecslab.local
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gateways external list "London Gateway" fqdn lon-gw.ecslab.local
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gateways external list "London Gateway" priority-rule Any priority 1
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gateways external list "London Gateway" manual yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gateways external cutoff-time 5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent authentication-override generate-cookie no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent agent-ui welcome-page page factory-default
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent agent-ui max-agent-user-overrides 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent agent-ui agent-user-override-timeout 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent agent-ui passcode -AQ==fEqNCco3Yq9h5ZUglD3CZJT4lBs=AlolwPIYNsN7HYoZtdNSpQ==
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent agent-ui uninstall-password -AQ==fEqNCco3Yq9h5ZUglD3CZJT4lBs=AlolwPIYNsN7HYoZtdNSpQ==
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent source-user any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent os any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config connect-method value user-logon
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config refresh-config-interval value 24
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config agent-user-override value with-passcode
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config uninstall value with-passcode
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config client-upgrade value prompt
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config enable-signout value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config allow-extend-session value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config use-sso value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config use-sso-pin value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config use-sso-macos value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config logout-remove-sso value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config krb-auth-fail-fallback value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config default-browser value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config retry-tunnel value 30
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config retry-timeout value 5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config traffic-enforcement value all
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config enforce-globalprotect value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config captive-portal-exception-timeout value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config traffic-blocking-notification-delay value 5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config display-traffic-blocking-notification-msg value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config traffic-blocking-notification-msg value '<div style="font-family:'Helvetica Neue';"><h1 style="color:red;text-align:center; margin: 0; font-size: 30px;">Notice</h1><p style="margin: 0;font-size: 15px; line-height: 1.2em;">To access the network, you must first connect to GlobalProtect.</p></div>'
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config allow-traffic-blocking-notification-dismissal value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config display-captive-portal-detection-msg value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config captive-portal-detection-msg value '<div style="font-family:'Helvetica Neue';"><h1 style="color:red;text-align:center; margin: 0; font-size: 30px;">Captive Portal Detected</h1><p style="margin: 0; font-size: 15px; line-height: 1.2em;">GlobalProtect has temporarily permitted network access for you to connect to the Internet. Follow instructions from your internet provider.</p><p style="margin: 0; font-size: 15px; line-height: 1.2em;">If you let the connection time out, open GlobalProtect and click Connect to try again.</p></div>'
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config captive-portal-notification-delay value 5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config certificate-store-lookup value machine
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config scep-certificate-renewal-period value 7
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config retain-connection-smartcard-removal value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config enable-advanced-view value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config enable-do-not-display-this-welcome-page-again value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config user-accept-terms-before-creating-tunnel value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config rediscover-network value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config resubmit-host-info value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config can-change-portal value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config can-continue-if-portal-cert-invalid value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config show-agent-icon value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config user-switch-tunnel-rename-timeout value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config pre-logon-tunnel-rename-timeout value -1
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config preserve-tunnel-upon-user-logoff-timeout value 300
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config ipsec-failover-ssl value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config display-tunnel-fallback-notification value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config ssl-only-selection value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config tunnel-mtu value 1400
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config max-internal-gateway-connection-attempts value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config adv-internal-host-detection value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config portal-timeout value 5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config connect-timeout value 5
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config receive-timeout value 30
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config split-tunnel-option value network-traffic
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config advanced-st-public-key value Empty
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config enforce-dns value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config append-local-search-domain value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config flush-dns value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config agent-proxy-port value 9999
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config agent-proxy-mode value 1
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config proxy-multiple-autodetect value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config use-proxy value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config enable-hip-remediation value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config wsc-autodetect value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config mfa-enabled value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config mfa-listening-port value 4501
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config mfa-notification-msg value "You have attempted to access a protected resource that requires additional authentication. Proceed to authenticate at"
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config mfa-prompt-suppress-time value 0
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config ipv6-preferred value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config log-gateway value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config cdl-log value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config dem-notification value yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config dem-agent value not-install
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config quarantine-add-message value "Your security policy has restricted access to the network from this device. If the issue persists, contact your administrator."
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config quarantine-remove-message value "Your security policy has restored access to the network from this device. If you still cannot access the network, contact your administrator."
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config init-panel value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent gp-app-config config user-input-on-top value no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent internal-host-detection ip-address 10.42.169.124
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent internal-host-detection hostname isinternal.ecslab.local
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent save-user-credentials 1
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent portal-2fa no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent manual-only-gateway-2fa no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent internal-gateway-2fa no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent auto-discovery-external-gateway-2fa no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config configs Agent mdm-enrollment-port 443
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local client-config root-ca Forward-Trust-CA-Decryption install-in-cert-store yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-portal portal1.ecslab.local satellite-config client-certificate local 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local roles default login-lifetime hours 24
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local roles default inactivity-logout 180
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH os Any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH authentication-profile AD-AUTH-LDAP
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH authentication-message "LDAP GW LON"
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH user-credential-or-client-cert-required no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH auto-retrieve-passcode no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH username-label Username
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local client-auth AD-AUTH password-label Password
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local ssl-tls-service-profile Asteriks-esclab-prof
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local log-setting default
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local tunnel-mode yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling include-domains list www.nariba.com 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling include-domains list github.com 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling include-domains list *.he.net 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling exclude-domains list noi.bg 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling exclude-domains list reddit.com 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling exclude-domains list www.bet365.com 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling exclude-domains list *.bet365.com 
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent split-tunneling access-route [ 0.0.0.0/0 1.1.1.1/32 4.4.4.4/32 10.42.173.0/24 ]
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent source-user any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent ip-pool GP-POOL-10.10.10.0_m24
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent os any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent retrieve-framed-ip-address no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel-configs agent no-direct-access-to-local-network yes
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1.ecslab.local remote-user-tunnel tunnel.100
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local roles default login-lifetime hours 24
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local roles default inactivity-logout 180
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP os Any
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP authentication-profile AD-AUTH-LDAP
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP authentication-message "LDAP GW LON-INTERNAL"
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP user-credential-or-client-cert-required no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP auto-retrieve-passcode no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP username-label Username
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local client-auth AUTH-LDAP password-label Password
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local ssl-tls-service-profile Asteriks-esclab-prof
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local log-setting default
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local tunnel-mode no
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local local-address ip ipv4 10.42.173.137/24
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local local-address ip-address-family ipv4
+set template prg-lab-palovm03 config  vsys vsys1 global-protect global-protect-gateway gateway1-internal.ecslab.local local-address interface ethernet1/2
+set template prg-lab-palovm03 config  vsys vsys1 global-protect clientless-app "Internal Resources" description "Internal Server"
+set template prg-lab-palovm03 config  vsys vsys1 global-protect clientless-app "Internal Resources" app-icon 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
+set template prg-lab-palovm03 config  vsys vsys1 global-protect clientless-app "Internal Resources" application-home-url https://server.net
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP group-object group
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP user-object person
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP server-profile AD-Integration
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP user-name sAMAccountName
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP user-email mail
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP alternate-user-name-1 userPrincipalName
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP alternate-user-name-2 
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP alternate-user-name-3 
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP group-name name
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP group-member member
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP group-email mail
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP group-include-list [ cn=all,ou=groups,ou=vpn,dc=ecslab,dc=local CN=Engineering,OU=Groups,OU=VPN,DC=ecslab,DC=local ]
+set template prg-lab-palovm03 config  vsys vsys1 group-mapping AD-LDAP domain ecslab.local
+set template prg-lab-palovm03 config  vsys vsys1 redistribution-agent 
+set template prg-lab-palovm03 config  vsys vsys1 redistribution-collector setting 
+set template prg-lab-palovm03 config  deviceconfig system type static 
+set template prg-lab-palovm03 config  deviceconfig system update-server updates.paloaltonetworks.com
+set template prg-lab-palovm03 config  deviceconfig system update-schedule threats recurring weekly day-of-week wednesday
+set template prg-lab-palovm03 config  deviceconfig system update-schedule threats recurring weekly at 01:02
+set template prg-lab-palovm03 config  deviceconfig system update-schedule threats recurring weekly action download-and-install
+set template prg-lab-palovm03 config  deviceconfig system update-schedule anti-virus recurring daily at 00:45
+set template prg-lab-palovm03 config  deviceconfig system update-schedule anti-virus recurring daily action download-and-install
+set template prg-lab-palovm03 config  deviceconfig system update-schedule wildfire recurring every-hour at 0
+set template prg-lab-palovm03 config  deviceconfig system update-schedule wildfire recurring every-hour action download-and-install
+set template prg-lab-palovm03 config  deviceconfig system update-schedule global-protect-datafile recurring daily at 00:00
+set template prg-lab-palovm03 config  deviceconfig system update-schedule global-protect-datafile recurring daily action download-and-install
+set template prg-lab-palovm03 config  deviceconfig system timezone UTC
+set template prg-lab-palovm03 config  deviceconfig system service disable-telnet yes
+set template prg-lab-palovm03 config  deviceconfig system service disable-http yes
+set template prg-lab-palovm03 config  deviceconfig system dns-setting servers primary 10.42.169.5
+set template prg-lab-palovm03 config  deviceconfig system dns-setting servers secondary 8.8.8.8
+set template prg-lab-palovm03 config  deviceconfig system panorama local-panorama panorama-server 10.42.42.135
+set template prg-lab-palovm03 config  deviceconfig system device-telemetry threat-prevention no
+set template prg-lab-palovm03 config  deviceconfig system device-telemetry device-health-performance no
+set template prg-lab-palovm03 config  deviceconfig system device-telemetry product-usage no
+set template prg-lab-palovm03 config  deviceconfig system authentication-profile test-Seq
+set template prg-lab-palovm03 config  deviceconfig setting config rematch yes
+set template prg-lab-palovm03 config  deviceconfig setting management hostname-type-in-syslog FQDN
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota config 4
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota system 4
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota traffic 29
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota threat 15
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota alarm 3
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota appstat 4
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota trsum 7
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota thsum 2
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota urlsum 2
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hourlytrsum 3
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hourlythsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hourlyurlsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dailytrsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dailythsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dailyurlsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota weeklytrsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota weeklythsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota weeklyurlsum 0.75
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hipmatch 3
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota globalprotect 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dlp-logs 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota application-pcaps 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota threat-pcaps 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota debug-filter-pcaps 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hip-reports 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota userid 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota iptag 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota gtp 2
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota sctp 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota auth 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota decryption 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota gtpsum 1
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hourlygtpsum 0.5
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dailygtpsum 0.5
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota weeklygtpsum 0.5
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota sctpsum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hourlysctpsum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dailysctpsum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota weeklysctpsum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota desum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota hourlydesum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota dailydesum 0
+set template prg-lab-palovm03 config  deviceconfig setting management quota-settings disk-quota weeklydesum 0
+set template prg-lab-palovm03 config  deviceconfig setting auto-mac-detect yes
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 ndp-proxy enabled no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 ip 10.42.171.137/24 
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 lldp enable no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 sdwan-link-settings upstream-nat enable no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 sdwan-link-settings upstream-nat static-ip 
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 sdwan-link-settings enable no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 layer3 interface-management-profile PING
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/1 comment fff
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 ndp-proxy enabled no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 ip 10.42.173.137/24 
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 lldp enable no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 sdwan-link-settings upstream-nat enable no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 sdwan-link-settings upstream-nat static-ip 
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 sdwan-link-settings enable no
+set template prg-lab-palovm03 config  network interface ethernet ethernet1/2 layer3 interface-management-profile PING
+set template prg-lab-palovm03 config  network interface tunnel units tunnel.10 ip 192.168.10.2/24 
+set template prg-lab-palovm03 config  network interface tunnel units tunnel.10 interface-management-profile PING
+set template prg-lab-palovm03 config  network interface tunnel units tunnel.100 interface-management-profile PING
+set template prg-lab-palovm03 config  network interface tunnel units tunnel.100 ip 10.10.10.1/24 
+set template prg-lab-palovm03 config  network interface tunnel units tunnel.50 
+set template prg-lab-palovm03 config  network profiles monitor-profile default interval 3
+set template prg-lab-palovm03 config  network profiles monitor-profile default threshold 5
+set template prg-lab-palovm03 config  network profiles monitor-profile default action wait-recover
+set template prg-lab-palovm03 config  network profiles interface-management-profile PING ping yes
+set template prg-lab-palovm03 config  network profiles interface-management-profile OCSP ping yes
+set template prg-lab-palovm03 config  network profiles interface-management-profile OCSP http-ocsp yes
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles default encryption [ aes-128-cbc 3des ]
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles default hash sha1
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles default dh-group group2
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles default lifetime hours 8
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-128 encryption aes-128-cbc
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-128 hash sha256
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-128 dh-group group19
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-128 lifetime hours 8
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-256 encryption aes-256-cbc
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-256 hash sha384
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-256 dh-group group20
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles Suite-B-GCM-256 lifetime hours 8
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles STRONG-MAX hash non-auth
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles STRONG-MAX dh-group group20
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles STRONG-MAX encryption aes-256-gcm
+set template prg-lab-palovm03 config  network ike crypto-profiles ike-crypto-profiles STRONG-MAX lifetime hours 8
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles default esp encryption [ aes-128-cbc 3des ]
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles default esp authentication sha1
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles default dh-group group2
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles default lifetime hours 1
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 esp encryption aes-128-gcm
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 esp authentication none
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 dh-group group19
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 lifetime hours 1
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 esp encryption aes-256-gcm
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 esp authentication none
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 dh-group group20
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 lifetime hours 1
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles STRONG-MAXX esp authentication sha512
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles STRONG-MAXX esp encryption aes-256-gcm
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles STRONG-MAXX lifetime hours 1
+set template prg-lab-palovm03 config  network ike crypto-profiles ipsec-crypto-profiles STRONG-MAXX dh-group group20
+set template prg-lab-palovm03 config  network ike crypto-profiles global-protect-app-crypto-profiles default encryption aes-256-gcm
+set template prg-lab-palovm03 config  network ike crypto-profiles global-protect-app-crypto-profiles default authentication sha1
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN authentication certificate local-certificate name VM-03-ID
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN authentication certificate certificate-profile IPSEC-PROF
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN protocol ikev1 dpd enable yes
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN protocol ikev2 dpd enable no
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN protocol ikev2 ike-crypto-profile STRONG-MAX
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN protocol version ikev2
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN local-address ip 10.42.171.137/24
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN local-address interface ethernet1/1
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN protocol-common nat-traversal enable yes
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN protocol-common fragmentation enable no
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN peer-address ip 10.42.171.252
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN peer-id matching exact
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN peer-id id CN=VM-01-ID,O=LAB-01
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN peer-id type dn
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN local-id id CN=VM-03-ID,O=LAB-03
+set template prg-lab-palovm03 config  network ike gateway PSK-VPN local-id type dn
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class1 priority real-time
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class2 priority high
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class3 priority high
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class4 priority medium
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class5 priority medium
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class6 priority low
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class7 priority low
+set template prg-lab-palovm03 config  network qos profile default class-bandwidth-type mbps class class8 priority low
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp enable no
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp dampening-profile default cutoff 1.25
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp dampening-profile default reuse 0.5
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp dampening-profile default max-hold-time 900
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp dampening-profile default decay-half-life-reachable 300
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp dampening-profile default decay-half-life-unreachable 900
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp dampening-profile default enable yes
+set template prg-lab-palovm03 config  network virtual-router default protocol bgp routing-options graceful-restart enable yes
+set template prg-lab-palovm03 config  network virtual-router default protocol rip enable no
+set template prg-lab-palovm03 config  network virtual-router default protocol ospf enable no
+set template prg-lab-palovm03 config  network virtual-router default protocol ospfv3 enable no
+set template prg-lab-palovm03 config  network virtual-router default interface [ ethernet1/1 ethernet1/2 tunnel.10 tunnel.100 tunnel.50 ]
+set template prg-lab-palovm03 config  network virtual-router default ecmp algorithm ip-modulo 
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default path-monitor enable no
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default path-monitor failure-condition any
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default path-monitor hold-time 2
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default nexthop ip-address 10.42.171.1
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default bfd profile None
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default interface ethernet1/1
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default metric 10
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default destination 0.0.0.0/0
+set template prg-lab-palovm03 config  network virtual-router default routing-table ip static-route default route-table unicast 
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 auto-key ike-gateway PSK-VPN 
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 auto-key proxy-id ID-01 protocol any 
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 auto-key proxy-id ID-01 local 192.168.20.0/24
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 auto-key proxy-id ID-01 remote 192.168.10.0/24
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 auto-key ipsec-crypto-profile STRONG-MAXX
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 tunnel-monitor enable no
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 tunnel-interface tunnel.10
+set template prg-lab-palovm03 config  network tunnel ipsec PSK-VPN-01 comment "Testing pre-shared-key VPN"
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N local-address ip ipv4 10.42.171.137/24
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N local-address interface ethernet1/1
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N local-address ip-address-family ipv4
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N client exclude-video-traffic applications 
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N client exclude-video-traffic enabled no
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N client dns-server 
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N ipsec enable yes
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N ipsec third-party-client enable no
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N ip-pool 
+set template prg-lab-palovm03 config  network tunnel global-protect-gateway gateway1.ecslab.local-N tunnel-interface tunnel.100
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust cache max-ttl enabled no
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust cache enabled yes
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust tcp-queries enabled no
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries lon-portal.ecslab.local address 10.42.171.137
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries lon-portal.ecslab.local domain lon-portal.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries lon-gw.ecslab.local address 10.42.171.137
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries lon-gw.ecslab.local domain lon-gw.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries fra-portal.ecslab.local address 10.42.171.147
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries fra-portal.ecslab.local domain fra-portal.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries fra-gw.ecslab.local address 10.42.171.147
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust static-entries fra-gw.ecslab.local domain fra-gw.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust interface ethernet1/1
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust default primary 8.8.8.8
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-Untrust default secondary 4.4.4.4
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST cache max-ttl enabled no
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST cache enabled yes
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST tcp-queries enabled no
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries internal.host.detection address 10.42.173.138
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries internal.host.detection domain internal.host.detection
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries lon-portal.ecslab.local address 10.42.171.137
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries lon-portal.ecslab.local domain lon-portal.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries fra-portal.ecslab.local address 10.42.171.147
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries fra-portal.ecslab.local domain fra-portal.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries gateway1-internal.ecslab.local address 10.42.173.137
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries gateway1-internal.ecslab.local domain gateway1-internal.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries fra-gw.ecslab.local address 10.42.171.147
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries fra-gw.ecslab.local domain fra-gw.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries lon-gw.ecslab.local address 10.42.171.137
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries lon-gw.ecslab.local domain lon-gw.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries pesho.ecslab.local address 2.2.2.2
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST static-entries pesho.ecslab.local domain pesho.ecslab.local
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST interface ethernet1/2
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST default primary 8.8.8.8
+set template prg-lab-palovm03 config  network dns-proxy DNS-SERVER-TRUST default secondary 4.4.4.4
+set template prg-lab-palovm03 config mgt-config users test permissions role-based custom profile Co-Management-Role
+set template prg-lab-palovm03 config mgt-config users test phash $5$sdganfrg$6.gOulfA5ZeS/270tX/M0IpzeoDQuV4vV/8BQTkGIeB
+set template prg-lab-palovm03 config mgt-config password-complexity enabled yes
+set template prg-lab-palovm03 config mgt-config password-complexity minimum-length 8
+
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption subject-hash e4172799
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption issuer-hash e4172799
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption not-valid-before "Nov  7 10:46:39 2022 GMT"
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption issuer /C=BG/CN=IPSEC-CA
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption not-valid-after "Jul 16 10:46:39 2036 GMT"
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption common-name IPSEC-CA
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption expiry-epoch 2099817999
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption ca yes
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption subject /C=BG/CN=IPSEC-CA
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption public-key "-----BEGIN CERTIFICATE-----
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption algorithm RSA
+set template prg-lab-palovm03 config shared certificate Forward-Trust-CA-Decryption private-key -AQ==E2zIAHwyG2FniziaJiN8+HAH9+k=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
+set template prg-lab-palovm03 config shared certificate VM-03-ID subject-hash 92802518
+set template prg-lab-palovm03 config shared certificate VM-03-ID issuer-hash e4172799
+set template prg-lab-palovm03 config shared certificate VM-03-ID not-valid-before "Nov  7 10:50:57 2022 GMT"
+set template prg-lab-palovm03 config shared certificate VM-03-ID issuer /C=BG/CN=IPSEC-CA
+set template prg-lab-palovm03 config shared certificate VM-03-ID not-valid-after "Mar  4 10:50:57 2035 GMT"
+set template prg-lab-palovm03 config shared certificate VM-03-ID common-name VM-03-ID
+set template prg-lab-palovm03 config shared certificate VM-03-ID expiry-epoch 2056618257
+set template prg-lab-palovm03 config shared certificate VM-03-ID ca no
+set template prg-lab-palovm03 config shared certificate VM-03-ID subject /O=LAB-03/CN=VM-03-ID
+set template prg-lab-palovm03 config shared certificate VM-03-ID public-key "-----BEGIN CERTIFICATE-----
+set template prg-lab-palovm03 config shared certificate VM-03-ID algorithm RSA
+set template prg-lab-palovm03 config shared certificate VM-03-ID private-key -AQ==hTqA5qTdjz79QZEiF50tCFygI7A=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
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local common-name portal1.ecslab.local
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local subject /C=BG/O=ggg/OU=IT/CN=portal1.ecslab.local
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local algorithm RSA
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local private-key -AQ==GZVaFC7OHXuK5u8kep92+cM1bN8=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
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local subject-hash 2f2c7185
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local issuer-hash 7653c651
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local not-valid-before "Feb 28 10:48:02 2023 GMT"
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local issuer /DC=local/DC=ecslab/CN=ecslab-ECSDC01-CA
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local not-valid-after "Feb 27 10:48:02 2025 GMT"
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local expiry-epoch 1740653282
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local ca no
+set template prg-lab-palovm03 config shared certificate portal1-ecslab-local public-key "-----BEGIN CERTIFICATE-----
+set template prg-lab-palovm03 config shared certificate ecslab-CA subject-hash 7653c651
+set template prg-lab-palovm03 config shared certificate ecslab-CA issuer-hash 7653c651
+set template prg-lab-palovm03 config shared certificate ecslab-CA not-valid-before "Mar 11 15:22:57 2020 GMT"
+set template prg-lab-palovm03 config shared certificate ecslab-CA issuer /DC=local/DC=ecslab/CN=ecslab-ECSDC01-CA
+set template prg-lab-palovm03 config shared certificate ecslab-CA not-valid-after "Mar 11 15:32:57 2030 GMT"
+set template prg-lab-palovm03 config shared certificate ecslab-CA common-name ecslab-ECSDC01-CA
+set template prg-lab-palovm03 config shared certificate ecslab-CA expiry-epoch 1899473577
+set template prg-lab-palovm03 config shared certificate ecslab-CA ca yes
+set template prg-lab-palovm03 config shared certificate ecslab-CA subject /DC=local/DC=ecslab/CN=ecslab-ECSDC01-CA
+set template prg-lab-palovm03 config shared certificate ecslab-CA public-key "-----BEGIN CERTIFICATE-----
+set template prg-lab-palovm03 config shared certificate ecslab-CA algorithm RSA
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH subject-hash 018ec2ee
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH issuer-hash 018ec2ee
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH not-valid-before "Apr  8 13:09:28 2024 GMT"
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH issuer "CN = GP-CERT-AUTH"
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH not-valid-after "Dec 16 13:09:28 2037 GMT"
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH common-name GP-CERT-AUTH
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH expiry-epoch 2144581768
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH ca yes
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH subject "CN = GP-CERT-AUTH"
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH public-key "-----BEGIN CERTIFICATE-----
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH algorithm RSA
+set template prg-lab-palovm03 config shared certificate GP-Cert-AUTH private-key -AQ==e5zN6oJZIcmIB1h75sO5c/73k9I=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
+set template prg-lab-palovm03 config shared certificate star-ecslab-local common-name *.ecslab.local
+set template prg-lab-palovm03 config shared certificate star-ecslab-local subject "CN = *.ecslab.local"
+set template prg-lab-palovm03 config shared certificate star-ecslab-local algorithm RSA
+set template prg-lab-palovm03 config shared certificate star-ecslab-local private-key -AQ==B6GkFUlwUXPWOivKirQP8LVTeHI=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
+set template prg-lab-palovm03 config shared certificate star-ecslab-local subject-hash 330d48f9
+set template prg-lab-palovm03 config shared certificate star-ecslab-local issuer-hash 7653c651
+set template prg-lab-palovm03 config shared certificate star-ecslab-local not-valid-before "Apr 15 11:45:39 2024 GMT"
+set template prg-lab-palovm03 config shared certificate star-ecslab-local issuer "DC = local, DC = ecslab, CN = ecslab-ECSDC01-CA"
+set template prg-lab-palovm03 config shared certificate star-ecslab-local not-valid-after "Apr 15 11:45:39 2026 GMT"
+set template prg-lab-palovm03 config shared certificate star-ecslab-local expiry-epoch 1776253539
+set template prg-lab-palovm03 config shared certificate star-ecslab-local ca no
+set template prg-lab-palovm03 config shared certificate star-ecslab-local public-key "-----BEGIN CERTIFICATE-----
+set template prg-lab-palovm03 config shared ssl-tls-service-profile portal1.ecslab.local protocol-settings min-version tls1-2
+set template prg-lab-palovm03 config shared ssl-tls-service-profile portal1.ecslab.local protocol-settings max-version max
+set template prg-lab-palovm03 config shared ssl-tls-service-profile portal1.ecslab.local certificate portal1-ecslab-local
+set template prg-lab-palovm03 config shared ssl-tls-service-profile Asteriks-esclab-prof protocol-settings min-version tls1-2
+set template prg-lab-palovm03 config shared ssl-tls-service-profile Asteriks-esclab-prof protocol-settings max-version max
+set template prg-lab-palovm03 config shared ssl-tls-service-profile Asteriks-esclab-prof certificate star-ecslab-local
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration server DC01 address 10.42.169.5
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration server DC01 port 389
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration server DC02 address 10.42.169.6
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration server DC02 port 389
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration ldap-type active-directory
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration bind-dn acc_pa@ecslab.local
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration ssl yes
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration base DC=ecslab,DC=local
+set template prg-lab-palovm03 config shared server-profile ldap AD-Integration bind-password -AQ==J4RuuWESNPb7bE1ATgZFZ8t4uwA=+8cyO5EenILafR5l5wxxaw==
+set template prg-lab-palovm03 config shared server-profile tacplus dasdasda server weqweqweqw secret -AQ==F2k5Y4GR1aE5Ncy5DAyKcKXjB3M=Nn2lDmSM2ysta87puC6VWA==
+set template prg-lab-palovm03 config shared server-profile tacplus dasdasda server weqweqweqw port 49
+set template prg-lab-palovm03 config shared server-profile tacplus dasdasda server weqweqweqw address 2.2.2.2
+set template prg-lab-palovm03 config shared server-profile tacplus dasdasda protocol PAP
+set template prg-lab-palovm03 config shared server-profile tacplus dasdasda use-single-connection yes
+set template prg-lab-palovm03 config shared authentication-profile AD-AUTH-LDAP method ldap server-profile AD-Integration
+set template prg-lab-palovm03 config shared authentication-profile AD-AUTH-LDAP multi-factor-auth mfa-enable no
+set template prg-lab-palovm03 config shared authentication-profile AD-AUTH-LDAP allow-list all
+set template prg-lab-palovm03 config shared authentication-profile AD-AUTH-LDAP user-domain ecslab.local
+set template prg-lab-palovm03 config shared authentication-profile Test_profile method tacplus server-profile dasdasda
+set template prg-lab-palovm03 config shared authentication-profile Test_profile method tacplus checkgroup yes
+set template prg-lab-palovm03 config shared authentication-profile Test_profile multi-factor-auth mfa-enable no
+set template prg-lab-palovm03 config shared authentication-profile Test_profile allow-list all
+set template prg-lab-palovm03 config shared ssl-decrypt trusted-root-CA ecslab-CA
+set template prg-lab-palovm03 config shared ssl-decrypt forward-trust-certificate rsa Forward-Trust-CA-Decryption
+set template prg-lab-palovm03 config shared authentication-sequence test-Seq authentication-profiles Test_profile
+set template prg-lab-palovm03 config shared authentication-sequence test-Seq use-domain-find-profile no
+set template prg-lab-palovm03 description asf
+set template-stack prg-lab-palovm03_stack settings default-vsys vsys1
+set template-stack prg-lab-palovm03_stack templates [ prg-lab-palovm03 Context_Switch_Master_Key ]
+set template-stack prg-lab-palovm03_stack devices 015351000097742 
+set template-stack prg-lab-palovm03_stack config  deviceconfig system device-telemetry threat-prevention yes
+set template-stack prg-lab-palovm03_stack config  deviceconfig system device-telemetry device-health-performance yes
+set template-stack prg-lab-palovm03_stack config  deviceconfig system device-telemetry product-usage yes
+set template-stack prg-lab-palovm03_stack config  deviceconfig system device-telemetry region pl
+set template-stack prg-lab-palovm03_stack description fff
+set readonly  device-group prg-lab-palovm03 id 33
+set readonly  template prg-lab-palovm03 id 34
+set readonly  template prg-lab-palovm03 config devices localhost.localdomain vsys vsys1 zone Untrust-L3 id 35
+set readonly  template prg-lab-palovm03 config devices localhost.localdomain vsys vsys1 zone Trust-L3 id 36
+set readonly  template prg-lab-palovm03 config devices localhost.localdomain vsys vsys1 zone S2S-VPN id 45
+set readonly  template prg-lab-palovm03 config devices localhost.localdomain vsys vsys1 zone GP-L3 id 48
+set readonly  template-stack prg-lab-palovm03_stack id 37
+
+
+set deviceconfig system ip-address 10.42.42.135
+set deviceconfig system netmask 255.255.255.0
+set deviceconfig system update-server updates.paloaltonetworks.com
+set deviceconfig system update-schedule threats recurring weekly day-of-week wednesday
+set deviceconfig system update-schedule threats recurring weekly at 01:02
+set deviceconfig system update-schedule threats recurring weekly action download-and-install
+set deviceconfig system update-schedule anti-virus recurring daily at 00:45
+set deviceconfig system update-schedule anti-virus recurring daily action download-and-install
+set deviceconfig system update-schedule wildfire recurring every-15-mins action download-and-install
+set deviceconfig system timezone UTC
+set deviceconfig system service disable-telnet yes
+set deviceconfig system service disable-http yes
+set deviceconfig system service disable-userid-service no
+set deviceconfig system service disable-snmp no
+set deviceconfig system hostname panorama-nfv-prg01
+set deviceconfig system type static
+set deviceconfig system default-gateway 10.42.42.254
+set deviceconfig system dns-setting servers primary 10.42.169.5
+set deviceconfig system dns-setting servers secondary 10.42.169.6
+set deviceconfig system dlsrvr interface eth1
+set deviceconfig system syslog-certificate syslognat
+set deviceconfig system ntp-servers primary-ntp-server ntp-server-address 10.42.169.5
+set deviceconfig system ntp-servers primary-ntp-server authentication-type none
+set deviceconfig system ntp-servers secondary-ntp-server ntp-server-address 10.42.169.6
+set deviceconfig system ntp-servers secondary-ntp-server authentication-type none
+set deviceconfig system push-schedule
+set deviceconfig system auto-renew-mkey-lifetime 96
+set deviceconfig system device-telemetry threat-prevention yes
+set deviceconfig system device-telemetry device-health-performance yes
+set deviceconfig system device-telemetry product-usage yes
+set deviceconfig system device-telemetry region pl
+set deviceconfig system mtu 1500
+set deviceconfig system config-bundle-export-schedule
+set deviceconfig setting management storage-partition internal
+set deviceconfig setting management hostname-type-in-syslog FQDN
+set deviceconfig setting management quota-settings log-expiration-period config 365
+set deviceconfig setting management quota-settings log-expiration-period system 365
+set deviceconfig setting management quota-settings log-expiration-period appstat 365
+
+set shared application
+set shared application-group
+set shared service BGP protocol tcp port 179
+set shared service BGP protocol tcp override no
+set shared service SSH protocol tcp port 22
+set shared service SSH protocol tcp override no
+set shared service SSH description SSH
+set shared service TCP_8080 protocol tcp port 8080
+set shared service TCP_8080 protocol tcp override no
+set shared service-group
+set shared schedule
+set shared profiles virus best-practice decoder ftp action default
+set shared profiles virus best-practice decoder ftp wildfire-action default
+set shared profiles virus best-practice decoder ftp mlav-action default
+set shared profiles virus best-practice decoder http action default
+set shared profiles virus best-practice decoder http wildfire-action default
+set shared profiles virus best-practice decoder http mlav-action default
+set shared profiles virus best-practice decoder imap action default
+set shared profiles virus best-practice decoder imap wildfire-action default
+set shared profiles virus best-practice decoder imap mlav-action default
+set shared profiles virus best-practice decoder pop3 action default
+set shared profiles virus best-practice decoder pop3 wildfire-action default
+set shared profiles virus best-practice decoder pop3 mlav-action default
+set shared profiles virus best-practice decoder smb action default
+set shared profiles virus best-practice decoder smb wildfire-action default
+set shared profiles virus best-practice decoder smb mlav-action default
+set shared profiles virus best-practice decoder smtp action reset-both
+set shared profiles virus best-practice decoder smtp wildfire-action reset-both
+set shared profiles virus best-practice decoder smtp mlav-action reset-both
+set shared profiles spyware best-practice botnet-domains lists default-paloalto-dns action sinkhole
+set shared profiles spyware best-practice botnet-domains lists default-paloalto-dns packet-capture disable
+set shared profiles spyware best-practice botnet-domains sinkhole ipv4-address pan-sinkhole-default-ip
+set shared profiles spyware best-practice botnet-domains sinkhole ipv6-address ::1
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-adtracking log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-adtracking action default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-adtracking packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-cc log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-cc action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-cc packet-capture single-packet
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-ddns log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-ddns action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-ddns packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-grayware log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-grayware action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-grayware packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-malware log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-malware action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-malware packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-parked log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-parked action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-parked packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-phishing log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-phishing action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-phishing packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-proxy log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-proxy action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-proxy packet-capture disable
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-recent log-level default
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-recent action sinkhole
+set shared profiles spyware best-practice botnet-domains dns-security-categories pan-dns-sec-recent packet-capture disable
+set shared profiles spyware best-practice rules "simple critical-high-medium" action reset-both
+set shared profiles spyware best-practice rules "simple critical-high-medium" severity [ critical high medium ]
+set shared profiles spyware best-practice rules "simple critical-high-medium" threat-name any
+set shared profiles spyware best-practice rules "simple critical-high-medium" category any
+set shared profiles spyware best-practice rules "simple critical-high-medium" packet-capture disable
+set shared profiles spyware best-practice rules "simple low-info" action default
+set shared profiles spyware best-practice rules "simple low-info" severity [ low informational ]
+set shared profiles spyware best-practice rules "simple low-info" threat-name any
+set shared profiles spyware best-practice rules "simple low-info" category any
+set shared profiles spyware best-practice rules "simple low-info" packet-capture disable
+set shared profiles vulnerability best-practice rules simple-client-critical cve any
+set shared profiles vulnerability best-practice rules simple-client-critical severity critical
+set shared profiles vulnerability best-practice rules simple-client-critical action reset-both
+set shared profiles vulnerability best-practice rules simple-client-critical threat-name any
+set shared profiles vulnerability best-practice rules simple-client-critical host client
+set shared profiles vulnerability best-practice rules simple-client-critical category any
+set shared profiles vulnerability best-practice rules simple-client-critical packet-capture disable
+set shared profiles vulnerability best-practice rules simple-client-critical vendor-id any
+set shared profiles vulnerability best-practice rules simple-client-high vendor-id any
+set shared profiles vulnerability best-practice rules simple-client-high cve any
+set shared profiles vulnerability best-practice rules simple-client-high severity high
+set shared profiles vulnerability best-practice rules simple-client-high action reset-both
+set shared profiles vulnerability best-practice rules simple-client-high threat-name any
+set shared profiles vulnerability best-practice rules simple-client-high host client
+set shared profiles vulnerability best-practice rules simple-client-high category any
+set shared profiles vulnerability best-practice rules simple-client-high packet-capture disable
+set shared profiles vulnerability best-practice rules simple-client-medium vendor-id any
+set shared profiles vulnerability best-practice rules simple-client-medium cve any
+set shared profiles vulnerability best-practice rules simple-client-medium severity medium
+set shared profiles vulnerability best-practice rules simple-client-medium action reset-both
+set shared profiles vulnerability best-practice rules simple-client-medium threat-name any
+set shared profiles vulnerability best-practice rules simple-client-medium host client
+set shared profiles vulnerability best-practice rules simple-client-medium category any
+set shared profiles vulnerability best-practice rules simple-client-medium packet-capture disable
+set shared profiles vulnerability best-practice rules simple-client-informational vendor-id any
+set shared profiles vulnerability best-practice rules simple-client-informational cve any
+set shared profiles vulnerability best-practice rules simple-client-informational severity informational
+set shared profiles vulnerability best-practice rules simple-client-informational action default
+set shared profiles vulnerability best-practice rules simple-client-informational threat-name any
+set shared profiles vulnerability best-practice rules simple-client-informational host client
+set shared profiles vulnerability best-practice rules simple-client-informational category any
+set shared profiles vulnerability best-practice rules simple-client-informational packet-capture disable
+set shared profiles vulnerability best-practice rules simple-client-low cve any
+set shared profiles vulnerability best-practice rules simple-client-low severity low
+set shared profiles vulnerability best-practice rules simple-client-low action default
+set shared profiles vulnerability best-practice rules simple-client-low threat-name any
+set shared profiles vulnerability best-practice rules simple-client-low host client
+set shared profiles vulnerability best-practice rules simple-client-low category any
+set shared profiles vulnerability best-practice rules simple-client-low packet-capture disable
+set shared profiles vulnerability best-practice rules simple-client-low vendor-id any
+set shared profiles vulnerability best-practice rules simple-server-critical vendor-id any
+set shared profiles vulnerability best-practice rules simple-server-critical cve any
+set shared profiles vulnerability best-practice rules simple-server-critical severity critical
+set shared profiles vulnerability best-practice rules simple-server-critical action reset-both
+set shared profiles vulnerability best-practice rules simple-server-critical threat-name any
+set shared profiles vulnerability best-practice rules simple-server-critical host server
+set shared profiles vulnerability best-practice rules simple-server-critical category any
+set shared profiles vulnerability best-practice rules simple-server-critical packet-capture disable
+set shared profiles vulnerability best-practice rules simple-server-high vendor-id any
+set shared profiles vulnerability best-practice rules simple-server-high cve any
+set shared profiles vulnerability best-practice rules simple-server-high severity high
+set shared profiles vulnerability best-practice rules simple-server-high action reset-both
+set shared profiles vulnerability best-practice rules simple-server-high threat-name any
+set shared profiles vulnerability best-practice rules simple-server-high host server
+set shared profiles vulnerability best-practice rules simple-server-high category any
+set shared profiles vulnerability best-practice rules simple-server-high packet-capture disable
+set shared profiles vulnerability best-practice rules simple-server-medium vendor-id any
+set shared profiles vulnerability best-practice rules simple-server-medium cve any
+set shared profiles vulnerability best-practice rules simple-server-medium severity medium
+set shared profiles vulnerability best-practice rules simple-server-medium action reset-both
+set shared profiles vulnerability best-practice rules simple-server-medium threat-name any
+set shared profiles vulnerability best-practice rules simple-server-medium host server
+set shared profiles vulnerability best-practice rules simple-server-medium category any
+set shared profiles vulnerability best-practice rules simple-server-medium packet-capture disable
+set shared profiles vulnerability best-practice rules simple-server-informational vendor-id any
+set shared profiles vulnerability best-practice rules simple-server-informational cve any
+set shared profiles vulnerability best-practice rules simple-server-informational severity informational
+set shared profiles vulnerability best-practice rules simple-server-informational action default
+set shared profiles vulnerability best-practice rules simple-server-informational threat-name any
+set shared profiles vulnerability best-practice rules simple-server-informational host server
+set shared profiles vulnerability best-practice rules simple-server-informational category any
+set shared profiles vulnerability best-practice rules simple-server-informational packet-capture disable
+set shared profiles vulnerability best-practice rules simple-server-low vendor-id any
+set shared profiles vulnerability best-practice rules simple-server-low cve any
+set shared profiles vulnerability best-practice rules simple-server-low severity low
+set shared profiles vulnerability best-practice rules simple-server-low action default
+set shared profiles vulnerability best-practice rules simple-server-low threat-name any
+set shared profiles vulnerability best-practice rules simple-server-low host server
+set shared profiles vulnerability best-practice rules simple-server-low category any
+set shared profiles vulnerability best-practice rules simple-server-low packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical action reset-both
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical severity critical
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical host client
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-critical packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high action reset-both
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high severity high
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high host client
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-high packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium action reset-both
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium severity medium
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium host client
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-medium packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational action default
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational severity informational
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational host client
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-informational packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low action default
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low severity low
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low host client
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-client-low packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical action reset-both
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical severity critical
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical host server
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-critical packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high action reset-both
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high severity high
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high host server
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-high packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium action reset-both
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium severity medium
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium host server
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-medium packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational action default
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational severity informational
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational host server
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-informational packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low action default
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low vendor-id any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low severity low
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low cve any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low threat-name any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low host server
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low category any
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor rules simple-server-low packet-capture disable
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor threat-exception 40005 action default
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor threat-exception 40005 time-attribute interval 60
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor threat-exception 40005 time-attribute threshold 20
+set shared profiles vulnerability best-practice_No_LDAP_BruteFor threat-exception 40005 time-attribute track-by source-and-destination
+set shared profiles file-blocking best-practice rules "Files to block" application any
+set shared profiles file-blocking best-practice rules "Files to block" file-type [ bat class dll hlp lnk Multi-Level-Encoding ]
+set shared profiles file-blocking best-practice rules "Files to block" direction both
+set shared profiles file-blocking best-practice rules "Files to block" action block
+set shared profiles file-blocking best-practice rules "Files req continue" application any
+set shared profiles file-blocking best-practice rules "Files req continue" file-type [ encrypted-rar encrypted-zip torrent ]
+set shared profiles file-blocking best-practice rules "Files req continue" direction both
+set shared profiles file-blocking best-practice rules "Files req continue" action continue
+set shared profiles file-blocking best-practice rules alert application any
+set shared profiles file-blocking best-practice rules alert file-type any
+set shared profiles file-blocking best-practice rules alert direction both
+set shared profiles file-blocking best-practice rules alert action alert
+set shared profiles file-blocking best-practice description "Default file blocking profile"
+set shared profiles wildfire-analysis best-practice rules "Send all" application any
+set shared profiles wildfire-analysis best-practice rules "Send all" direction both
+set shared profiles wildfire-analysis best-practice rules "Send all" analysis public-cloud
+set shared profiles wildfire-analysis best-practice rules "Send all" file-type any
+set shared profiles url-filtering best-practice credential-enforcement mode disabled
+set shared profiles url-filtering best-practice credential-enforcement log-severity medium
+set shared profiles url-filtering best-practice credential-enforcement block [ abused-drugs adult command-and-control copyright-infringement cryptocurrency dynamic-dns extremism gambling grayware hacking high-risk malware nudity parked peer-to-peer phishing proxy-avoidance-and-anonymizers questionable real-time-detection unknown weapons ]
+set shared profiles url-filtering best-practice local-inline-cat no
+set shared profiles url-filtering best-practice cloud-inline-cat yes
+set shared profiles url-filtering best-practice alert [ abortion alcohol-and-tobacco auctions business-and-economy computer-and-internet-info content-delivery-networks dating educational-institutions entertainment-and-arts financial-services games government health-and-medicine home-and-garden hunting-and-fishing insufficient-content internet-communications-and-telephony internet-portals job-search legal low-risk medium-risk military motor-vehicles music newly-registered-domain news not-resolved online-storage-and-backup personal-sites-and-blogs philosophy-and-political-advocacy private-ip-addresses real-estate recreation-and-hobbies reference-and-research religion search-engines sex-education shareware-and-freeware shopping social-networking society sports stock-advice-and-tools streaming-media swimsuits-and-intimate-apparel training-and-tools translation travel web-advertisements web-based-email web-hosting ]
+set shared profiles url-filtering best-practice block [ abused-drugs adult command-and-control copyright-infringement cryptocurrency dynamic-dns extremism gambling grayware hacking high-risk malware nudity parked peer-to-peer phishing proxy-avoidance-and-anonymizers questionable real-time-detection unknown weapons ]
+set shared profiles url-filtering Alert_URLs credential-enforcement mode disabled
+set shared profiles url-filtering Alert_URLs credential-enforcement log-severity medium
+set shared profiles url-filtering Alert_URLs alert [ abortion abused-drugs adult alcohol-and-tobacco auctions business-and-economy command-and-control computer-and-internet-info content-delivery-networks copyright-infringement cryptocurrency dating dynamic-dns educational-institutions entertainment-and-arts extremism financial-services gambling games government grayware hacking health-and-medicine high-risk home-and-garden hunting-and-fishing insufficient-content internet-communications-and-telephony internet-portals job-search legal low-risk malware medium-risk military motor-vehicles music newly-registered-domain news not-resolved nudity online-storage-and-backup parked peer-to-peer personal-sites-and-blogs philosophy-and-political-advocacy phishing private-ip-addresses proxy-avoidance-and-anonymizers questionable real-estate recreation-and-hobbies reference-and-research religion search-engines sex-education shareware-and-freeware shopping social-networking society sports stock-advice-and-tools streaming-media swimsuits-and-intimate-apparel training-and-tools translation travel unknown weapons web-advertisements web-based-email web-hosting ]
+set shared profiles url-filtering Alert_URLs local-inline-cat yes
+set shared profiles url-filtering Alert_URLs cloud-inline-cat no
+set shared profiles custom-url-category MY-LIST list [ dir.bg data.bg/* *.kuche.bg sinoptik.bg web.archive.org cnn.com youtube.com drive.google.com ]
+set shared profiles custom-url-category MY-LIST type "URL List"
+set shared profiles hip-objects Microsoft_Firewall_Enable firewall vendor "Microsoft Corporation" product "Windows Firewall"
+set shared profiles hip-objects Microsoft_Firewall_Enable firewall criteria is-enabled yes
+set shared profiles hip-objects Microsoft_Firewall_Enable firewall criteria is-installed yes
+set shared profiles hip-objects Microsoft_Firewall_Enable firewall exclude-vendor no
+set shared profiles hip-objects Microsoft_Firewall_Disabled firewall vendor "Microsoft Corporation" product "Windows Firewall"
+set shared profiles hip-objects Microsoft_Firewall_Disabled firewall criteria is-installed yes
+set shared profiles hip-objects Microsoft_Firewall_Disabled firewall criteria is-enabled no
+set shared profiles hip-objects Microsoft_Firewall_Disabled firewall exclude-vendor no
+set shared profiles hip-objects Microsoft_AV_Enable anti-malware criteria real-time-protection yes
+set shared profiles hip-objects Microsoft_AV_Enable anti-malware criteria is-installed yes
+set shared profiles hip-objects Microsoft_AV_Enable anti-malware vendor "Microsoft Corporation"
+set shared profiles hip-objects Microsoft_AV_Enable anti-malware exclude-vendor no
+set shared profiles hip-objects Microsoft_AV_Disabled anti-malware criteria real-time-protection no
+set shared profiles hip-objects Microsoft_AV_Disabled anti-malware criteria is-installed yes
+set shared profiles hip-objects Microsoft_AV_Disabled anti-malware vendor "Microsoft Corporation"
+set shared profiles hip-objects Microsoft_AV_Disabled anti-malware exclude-vendor no
+set shared profiles hip-profiles HIP_Profile_MS_FW_Enable match '"Microsoft_Firewall_Enable"'
+set shared profiles hip-profiles HIP_Profile_MS_FW_Disabled match '"Microsoft_Firewall_Disabled"'
+set shared profiles hip-profiles HIP_Profile_MS_AV_Enable match '"Microsoft_AV_Enable"'
+set shared profiles hip-profiles HIP_Profile_MS_AV_Disabled match '"Microsoft_AV_Disabled"'
+set shared profiles data-objects Credit-card-numbers pattern-type predefined pattern credit-card-numbers file-type any
+set shared profiles data-filtering Credit-card-filter rules rule0 application any
+set shared profiles data-filtering Credit-card-filter rules rule0 file-type any
+set shared profiles data-filtering Credit-card-filter rules rule0 direction both
+set shared profiles data-filtering Credit-card-filter rules rule0 alert-threshold 0
+set shared profiles data-filtering Credit-card-filter rules rule0 block-threshold 0
+set shared profiles data-filtering Credit-card-filter rules rule0 data-object Credit-card-numbers
+set shared profiles data-filtering Credit-card-filter rules rule0 log-severity informational
+set shared profiles decryption Best-Practice ssl-protocol-settings min-version tls1-2
+set shared profiles decryption Best-Practice ssl-protocol-settings max-version max
+set shared profiles decryption Best-Practice ssl-protocol-settings enc-algo-3des no
+set shared profiles decryption Best-Practice ssl-protocol-settings enc-algo-rc4 no
+set shared profiles decryption Best-Practice ssl-protocol-settings enc-algo-chacha20-poly1305 yes
+set shared profiles decryption Best-Practice ssl-forward-proxy block-expired-certificate yes
+set shared profiles decryption Best-Practice ssl-forward-proxy block-untrusted-issuer yes
+set shared profiles decryption Best-Practice ssl-forward-proxy block-unknown-cert no
+set shared profiles decryption Best-Practice ssl-forward-proxy block-timeout-cert no
+set shared profiles decryption Best-Practice ssl-forward-proxy block-unsupported-version yes
+set shared profiles decryption Best-Practice ssl-forward-proxy block-unsupported-cipher yes
+set shared profiles decryption Best-Practice ssl-no-proxy block-expired-certificate yes
+set shared profiles decryption Best-Practice ssl-no-proxy block-untrusted-issuer yes
+set shared profile-group default-spg virus best-practice
+set shared profile-group default-spg spyware best-practice
+set shared profile-group default-spg vulnerability best-practice
+set shared profile-group default-spg file-blocking best-practice
+set shared profile-group default-spg url-filtering best-practice
+set shared profile-group default-spg wildfire-analysis best-practice
+set shared profile-group default-spg-No-URL_File virus best-practice
+set shared profile-group default-spg-No-URL_File spyware best-practice
+set shared profile-group default-spg-No-URL_File vulnerability best-practice
+set shared profile-group default-spg-No-URL_File wildfire-analysis best-practice
+set shared profile-group default-spg-No-URL_File url-filtering Alert_URLs
+set shared profile-group WEB virus default
+set shared profile-group WEB spyware strict
+set shared profile-group WEB vulnerability strict
+set shared profile-group WEB url-filtering default
+set shared profile-group WEB file-blocking "strict file blocking"
+set shared profile-group WEB wildfire-analysis default
+set shared profile-group default-spg-No-URL_File_LDAP virus best-practice
+set shared profile-group default-spg-No-URL_File_LDAP spyware best-practice
+set shared profile-group default-spg-No-URL_File_LDAP vulnerability best-practice_No_LDAP_BruteFor
+set shared profile-group default-spg-No-URL_File_LDAP wildfire-analysis best-practice
+set shared profile-group default-spg-No-URL_File_LDAP url-filtering Alert_URLs
+set shared log-settings profiles default match-list All log-type traffic
+set shared log-settings profiles default match-list All filter "All Logs"
+set shared log-settings profiles default match-list All send-to-panorama yes
+set shared log-settings profiles default match-list All quarantine no
+set shared log-settings profiles default match-list threat-enhanced-app-logging log-type threat
+set shared log-settings profiles default match-list threat-enhanced-app-logging filter "All Logs"
+set shared log-settings profiles default match-list threat-enhanced-app-logging send-to-panorama yes
+set shared log-settings profiles default match-list threat-enhanced-app-logging quarantine no
+set shared log-settings profiles default match-list wildfire-enhanced-app-logging log-type wildfire
+set shared log-settings profiles default match-list wildfire-enhanced-app-logging filter "All Logs"
+set shared log-settings profiles default match-list wildfire-enhanced-app-logging send-to-panorama yes
+set shared log-settings profiles default match-list wildfire-enhanced-app-logging quarantine no
+set shared log-settings profiles default match-list url-enhanced-app-logging log-type url
+set shared log-settings profiles default match-list url-enhanced-app-logging filter "All Logs"
+set shared log-settings profiles default match-list url-enhanced-app-logging send-to-panorama yes
+set shared log-settings profiles default match-list url-enhanced-app-logging quarantine no
+set shared log-settings profiles default match-list data-enhanced-app-logging log-type data
+set shared log-settings profiles default match-list data-enhanced-app-logging filter "All Logs"
+set shared log-settings profiles default match-list data-enhanced-app-logging send-to-panorama yes
+set shared log-settings profiles default match-list data-enhanced-app-logging quarantine no
+set shared log-settings profiles default match-list tunnel-enhanced-app-logging log-type tunnel
+set shared log-settings profiles default match-list tunnel-enhanced-app-logging filter "All Logs"
+set shared log-settings profiles default match-list tunnel-enhanced-app-logging send-to-panorama yes
+set shared log-settings profiles default match-list tunnel-enhanced-app-logging quarantine no
+set shared log-settings profiles default match-list auth-enhanced-app-logging log-type auth
+set shared log-settings profiles default match-list auth-enhanced-app-logging filter "All Logs"
+set shared log-settings profiles default match-list auth-enhanced-app-logging send-to-panorama yes
+set shared log-settings profiles default match-list auth-enhanced-app-logging quarantine no
+set shared log-settings profiles default match-list Decryption log-type decryption
+set shared log-settings profiles default match-list Decryption filter "All Logs"
+set shared log-settings profiles default match-list Decryption send-to-panorama yes
+set shared log-settings profiles default match-list Decryption quarantine no
+set shared log-settings profiles default enhanced-application-logging yes
+set shared address net_10.42.170.0_m24 ip-netmask 10.42.170.0/24
+set shared address net_10.42.170.0_m24 description 10.42.170.0
+set shared address net_10.42.169.0_m24 ip-netmask 10.42.169.0/24
+set shared address abc ip-netmask 1.2.3.4
+set shared address prg-lab-palovm01_Outside ip-netmask 10.42.171.252
+set shared address prg-lab-palovm01_Outside description "prg-lab-palovm01 Outside Interface"
+set shared address CentOSClient ip-netmask 10.42.173.99
+set shared address net_10.42.171.0_m24 ip-netmask 10.42.171.0/24
+set shared address net_10.42.171.0_m24 description 10.42.171.0
+set shared address net_10.42.172.0_m24 ip-netmask 10.42.172.0/24
+set shared address net_10.42.172.0_m24 description 10.42.172.0
+set shared address net_10.42.173.0_m24 ip-netmask 10.42.173.0/24
+set shared address net_10.42.173.0_m24 description 10.42.173.0
+set shared address ECSDC01.ecslab.local ip-netmask 10.42.169.5
+set shared address ECSDC02.ecslab.local ip-netmask 10.42.169.6
+set shared address test4321 ip-netmask 4.3.2.2
+set shared address Host_10.42.174.10 ip-netmask 10.42.174.10
+set shared address test_admin ip-netmask 1.43.2.4
+set shared address test_frg ip-netmask 1.2.3.4
+set shared address admin_something ip-netmask 1.2.3.4
+set shared address frfr ip-netmask 1.2.3.4
+set shared address 355353 ip-netmask 1.4.5.3
+set shared address ff ip-netmask 1.2.3.4
+set shared address ECSMgmt ip-netmask 10.42.169.7
+set shared address Host_10.42.173.127 ip-netmask 10.42.173.127
+set shared address something ip-netmask 1.2.3.4
+set shared address Pool_1 ip-netmask 10.42.100.0/24
+set shared address Pool_2 ip-netmask 10.42.101.0/24
+set shared address Host_10.42.173.115 ip-netmask 10.42.173.115
+set shared address Host_10.42.173.115 description asdasf
+set shared address GP-POOL-10.10.10.0_m24 ip-netmask 10.10.10.0/24
+set shared address GP-POOL-10.10.10.0_m24 description "IP pool for Global Protect"
+set shared address Internal-NET-10.42.173.0_m24 ip-netmask 10.42.173.0/24
+set shared address Internal-NET-10.42.173.0_m24 description "Internal network subnet"
+set shared address-group test static [ net_10.42.169.0_m24 abc ]
+
+set shared region
+set shared application-filter
+set shared authentication-object
+set shared tag MyTestTag
+set shared application-status
+set shared threats
+set shared post-rulebase security rules
+set shared post-rulebase default-security-rules rules intrazone-default action allow
+set shared post-rulebase default-security-rules rules intrazone-default log-start yes
+set shared post-rulebase default-security-rules rules intrazone-default log-end no
+set shared post-rulebase default-security-rules rules interzone-default action deny
+set shared post-rulebase default-security-rules rules interzone-default log-start yes
+set shared post-rulebase default-security-rules rules interzone-default log-end no
+set shared pre-rulebase security rules
+
+set shared reports TOP-ATTACKS-USAGE type panorama-thsum sortby count
+set shared reports TOP-ATTACKS-USAGE type panorama-thsum group-by device_name
+set shared reports TOP-ATTACKS-USAGE type panorama-thsum aggregate-by [ threat_name threatid threat-type category-of-threatid subtype app rule action ]
+set shared reports TOP-ATTACKS-USAGE type panorama-thsum values count
+set shared reports TOP-ATTACKS-USAGE period last-30-days
+set shared reports TOP-ATTACKS-USAGE topn 25
+set shared reports TOP-ATTACKS-USAGE topm 10
+set shared reports TOP-ATTACKS-USAGE caption TOP-ATTACKS-USAGE
+set shared reports TOP-ATTACKS-USAGE description "Threat Reports"
+set shared reports TOP-ATTACKS-USAGE frequency daily
+set shared reports TOP-SOURCE-TRAFFIC type panorama-trsum sortby bytes
+set shared reports TOP-SOURCE-TRAFFIC type panorama-trsum group-by device_name
+set shared reports TOP-SOURCE-TRAFFIC type panorama-trsum aggregate-by [ src src_host srcuser from ]
+set shared reports TOP-SOURCE-TRAFFIC type panorama-trsum values [ nunique-of-apps nthreats sessions bytes ]
+set shared reports TOP-SOURCE-TRAFFIC period last-30-days
+set shared reports TOP-SOURCE-TRAFFIC topn 10
+set shared reports TOP-SOURCE-TRAFFIC topm 10
+set shared reports TOP-SOURCE-TRAFFIC caption TOP-SOURCE-TRAFFIC
+set shared reports TOP-SOURCE-TRAFFIC description "Traffic Reports"
+set shared reports TOP-SOURCE-TRAFFIC frequency daily
+set shared reports APP-STATISTICS type appstat sortby nbytes
+set shared reports APP-STATISTICS type appstat group-by device_name
+set shared reports APP-STATISTICS type appstat aggregate-by [ name subcategory-of-name category-of-name technology-of-name risk-of-name ]
+set shared reports APP-STATISTICS type appstat values [ nthreats nsess nbytes ]
+set shared reports APP-STATISTICS period last-30-days
+set shared reports APP-STATISTICS topn 25
+set shared reports APP-STATISTICS topm 10
+set shared reports APP-STATISTICS caption APP-STATISTICS
+set shared reports APP-STATISTICS frequency daily
+set shared reports APP-STATISTICS description "Traffic Reports"
+set shared reports top-blocked-websites type panorama-url sortby repeatcnt
+set shared reports top-blocked-websites type panorama-url group-by device_name
+set shared reports top-blocked-websites type panorama-url aggregate-by [ dst misc url_category_list ]
+set shared reports top-blocked-websites type panorama-url values repeatcnt
+set shared reports top-blocked-websites period last-30-days
+set shared reports top-blocked-websites topn 10
+set shared reports top-blocked-websites topm 10
+set shared reports top-blocked-websites caption top-blocked-websites
+set shared reports top-blocked-websites description "URL Filtering Reports"
+set shared reports top-blocked-websites frequency daily
+set shared reports top-blocked-websites query "action eq block-url"
+set shared reports TOP-WEBSITES-VISIT type panorama-urlsum sortby repeatcnt
+set shared reports TOP-WEBSITES-VISIT type panorama-urlsum group-by device_name
+set shared reports TOP-WEBSITES-VISIT type panorama-urlsum aggregate-by [ url_domain category url_category_list ]
+set shared reports TOP-WEBSITES-VISIT type panorama-urlsum values repeatcnt
+set shared reports TOP-WEBSITES-VISIT period last-30-days
+set shared reports TOP-WEBSITES-VISIT topn 25
+set shared reports TOP-WEBSITES-VISIT topm 10
+set shared reports TOP-WEBSITES-VISIT caption TOP-WEBSITES-VISIT
+set shared reports TOP-WEBSITES-VISIT description "URL Filtering Reports"
+set shared reports TOP-WEBSITES-VISIT frequency daily
+set shared report-group Scheduled-report-Group custom-widget 1 predefined-report bandwidth-trend
+set shared report-group Scheduled-report-Group custom-widget 2 custom-report TOP-ATTACKS-USAGE
+set shared report-group Scheduled-report-Group custom-widget 3 custom-report TOP-SOURCE-TRAFFIC
+set shared report-group Scheduled-report-Group custom-widget 4 custom-report APP-STATISTICS
+set shared report-group Scheduled-report-Group custom-widget 5 custom-report top-blocked-websites
+set shared report-group Scheduled-report-Group custom-widget 6 custom-report TOP-WEBSITES-VISIT
+set shared report-group Scheduled-report-Group title-page yes
+set shared email-scheduler Email-scheduler report-group Scheduled-report-Group
+set shared email-scheduler Email-scheduler email-profile MAIL_RELAY
+set shared email-scheduler Email-scheduler recurring daily
